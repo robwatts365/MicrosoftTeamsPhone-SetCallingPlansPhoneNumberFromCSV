@@ -67,18 +67,7 @@ foreach ($User in $Users) {
     $TelephoneNumber = $User.TelephoneNumber
         
     Set-CsOnlineVoiceUser -Identity $UPN -TelephoneNumber $TelephoneNumber -LocationID $EmergencyLocation.locationID
-
-    # Write Error
-    If($Error){
-    Write-Output "ERROR: $Error"
-    Write-Host "ERROR: $Error" -ForegroundColor Red
-    }
-
-    Else {
-    Write-Host "SUCCESS: $UPN has been assigned $TelephoneNumber" -ForegroundColor Green
-    }
-           
-
+         
     }
 
 
