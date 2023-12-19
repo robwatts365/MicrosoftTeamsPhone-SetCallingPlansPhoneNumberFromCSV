@@ -1,8 +1,8 @@
 <# 
 Set Calling Plans Phone Number from CSV
-    Version: v1.0
-    Date: 24/08/2021
-    Author: Rob Watts - Customer Engineer - Microsoft
+    Version: v1.1
+    Date: 19/12/2023
+    Author: Rob Watts - Cloud Solution Architect - Microsoft
     
 
 DISCLAIMER
@@ -66,7 +66,7 @@ foreach ($User in $Users) {
     $UPN = $User.UPN
     $TelephoneNumber = $User.TelephoneNumber
         
-    Set-CsOnlineVoiceUser -Identity $UPN -TelephoneNumber $TelephoneNumber -LocationID $EmergencyLocation.locationID
+    Set-CSPhoneNumberAssignment -Identity $UPN -PhoneNumber $TelephoneNumber -PhoneNumberType CallingPlan -LocationID $EmergencyLocation.locationID
          
     }
 
